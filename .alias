@@ -1,0 +1,62 @@
+# git
+alias grm="rm -rf .git"
+
+# application
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+alias code="/usr/local/bin/code"
+alias server="python3 -m http.server 3000"
+alias servero="python3 -m http.server 3000 && open http://localhost:3000"
+
+# golang
+alias godir="cd $HOME/Labs/go/src/bitbucket.org/kudoindonesia"
+alias gorun="go run ./main.go"
+alias golab="cd $HOME/Labs/go/src/github.com/burubur"
+alias jslab="cd $HOME/Labs/js"
+alias gos="cd ~/Labs/go/src"
+alias cov="go test ./... -coverprofile=c.out && go tool cover -html=c.out"
+alias runmock="go run ~//Labs/go/src/bitbucket.org/kudoindonesia/mocking_biller/cmd/mocking_biller/main.go serve"
+alias rundjipayment="go run ~/Labs/go/src/bitbucket.org/kudoindonesia/biller_connector_dji/main.go payment-processor --config $HOME/Labs/go/src/bitbucket.org/kudoindonesia/biller_connector_dji/configuration/app.yaml"
+alias p="go run ~/Labs/go/src/github.com/burubur/kafka-producer/main.go"
+
+# docker
+alias dcl="docker container list"
+alias dcp="docker container prune"
+alias dil="docker images"
+alias dip="docker image prune"
+alias dcu="docker-compose up -d"
+alias dcstop="docker-compose stop"
+alias dcdown="docker-compose down"
+
+alias findport="sudo lsof -iTCP -sTCP:LISTEN -n -P | grep"
+alias portusages="sudo lsof -iTCP -sTCP:LISTEN -n -P"
+
+# tmux
+alias t="tmux a -t base"
+alias tl="tmux ls"
+alias ts="tmux source ~/.tmux.conf"
+
+# vim
+alias te="vim .tmux.conf"
+alias ve="vim ~/.vimrc"
+
+# npm
+alias ni="npm install"
+alias nu="npm uninstall"
+alias nup="npm update"
+alias nri="rm -r node_modules && npm install"
+alias ncd="npm-check -su"
+alias redir="cd ~/Labs/js/react"
+
+# utils
+alias l="ls -la"
+alias _="sudo"
+alias rr="rm -rf"
+alias ez="vim ~/.zshrc"
+alias sz="source ~/.zshrc"
+alias e="exit"
+alias c="clear"
+alias eh="sudo vim /etc/hosts"
+alias ch="cat /etc/hosts"
+
+# unaliasing default
+unalias g
