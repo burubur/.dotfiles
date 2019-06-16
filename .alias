@@ -2,22 +2,25 @@
 alias grm="rm -rf .git"
 
 # application
+alias h="htop"
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
-# alias code="/usr/local/bin/code"
-alias code="/Applications/Visual\ Studio\ Code\ -\ Insiders.app/Contents/MacOS/Electron ;"
+alias code="/usr/local/bin/code ."
+alias insider="/Applications/Visual\ Studio\ Code\ -\ Insiders.app/Contents/MacOS/Electron ;"
 alias server="python3 -m http.server 3000"
 alias servero="python3 -m http.server 3000 && open http://localhost:3000"
 
 # golang
-alias godir="cd $HOME/Labs/go/src/bitbucket.org/kudoindonesia"
+alias gob="go build"
+alias gt="go test ./..."
+alias godir="cd $HOME/lab/go/src/bitbucket.org/kudoindonesia"
 alias gorun="go run ./main.go"
-alias golab="cd $HOME/Labs/go/src/github.com/burubur"
-alias jslab="cd $HOME/Labs/js"
-alias gos="cd ~/Labs/go/src"
+alias golab="cd $HOME/lab/go/src/github.com/burubur"
+alias jslab="cd $HOME/lab/js"
+alias gos="cd ~/lab/go/src"
 alias cov="go test ./... -coverprofile=c.out && go tool cover -html=c.out"
-alias runmock="go run ~//Labs/go/src/bitbucket.org/kudoindonesia/mocking_biller/cmd/mocking_biller/main.go serve"
-alias rundjipayment="go run ~/Labs/go/src/bitbucket.org/kudoindonesia/biller_connector_dji/main.go payment-processor --config $HOME/Labs/go/src/bitbucket.org/kudoindonesia/biller_connector_dji/configuration/app.yaml"
-alias p="go run ~/Labs/go/src/github.com/burubur/kafka-producer/main.go"
+alias runmock="go run ~//lab/go/src/bitbucket.org/kudoindonesia/mocking_biller/cmd/mocking_biller/main.go serve"
+alias rundjipayment="go run ~/lab/go/src/bitbucket.org/kudoindonesia/biller_connector_dji/main.go payment-processor --config $HOME/lab/go/src/bitbucket.org/kudoindonesia/biller_connector_dji/configuration/app.yaml"
+alias p="go run ~/lab/go/src/github.com/burubur/kafka-producer/main.go"
 
 # docker
 alias dcl="docker container list"
@@ -46,7 +49,7 @@ alias nu="npm uninstall"
 alias nup="npm update"
 alias nri="rm -r node_modules && npm install"
 alias ncd="npm-check -su"
-alias redir="cd ~/Labs/js/react"
+alias redir="cd ~/lab/js/react"
 
 # utils
 alias l="ls -la"
