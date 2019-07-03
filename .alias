@@ -34,6 +34,7 @@ alias dcdown="docker-compose down"
 
 alias findport="sudo lsof -iTCP -sTCP:LISTEN -n -P | grep"
 alias portusages="sudo lsof -iTCP -sTCP:LISTEN -n -P"
+alias usedport="lsof -n -P -i | grep"
 
 # tmux
 alias t="tmux a -t base"
