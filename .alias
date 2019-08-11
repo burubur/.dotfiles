@@ -25,6 +25,8 @@ alias p="go run ~/lab/go/src/github.com/burubur/kafka-producer/main.go"
 
 # docker
 alias dcl="docker container list"
+alias dvl="docker volume list"
+alias dvp="docker volume prune"
 alias dcp="docker container prune"
 alias dil="docker images"
 alias dip="docker image prune"
@@ -32,6 +34,7 @@ alias dsp="docker system prune"
 alias dcu="docker-compose up -d"
 alias dcstop="docker-compose stop"
 alias dcdown="docker-compose down"
+alias dcs="docker container stop"
 
 alias findport="sudo lsof -iTCP -sTCP:LISTEN -n -P | grep"
 alias portusages="sudo lsof -iTCP -sTCP:LISTEN -n -P"
