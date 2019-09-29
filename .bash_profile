@@ -1,0 +1,1 @@
+complete -C /Users/burhan.mubarak/lab/go/bin/vault vault
