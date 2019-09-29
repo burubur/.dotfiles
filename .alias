@@ -4,7 +4,7 @@ alias grm="rm -rf .git"
 # application
 alias h="htop"
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
-alias code="/usr/local/bin/code"
+alias code="/usr/local/bin/code-insiders"
 alias co="/usr/local/bin/code ."
 alias insider="/Applications/Visual\ Studio\ Code\ -\ Insiders.app/Contents/MacOS/Electron ;"
 alias server="python3 -m http.server 3000"
@@ -35,6 +35,7 @@ alias dcu="docker-compose up -d"
 alias dcstop="docker-compose stop"
 alias dcdown="docker-compose down"
 alias dcs="docker container stop"
+alias dck="docker container kill"
 
 alias findport="sudo lsof -iTCP -sTCP:LISTEN -n -P | grep"
 alias portusages="sudo lsof -iTCP -sTCP:LISTEN -n -P"
@@ -67,6 +68,7 @@ alias e="exit"
 alias c="clear"
 alias eh="sudo vim /etc/hosts"
 alias ch="cat /etc/hosts"
+alias copypath="pwd|pbcopy"
 
 # unaliasing default
 unalias g
