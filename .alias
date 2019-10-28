@@ -71,4 +71,4 @@ alias ch="cat /etc/hosts"
 alias copypath="pwd|pbcopy"
 
 # unaliasing default
-unalias g
+# unalias g
