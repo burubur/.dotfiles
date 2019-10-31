@@ -3,6 +3,7 @@ export LANG=en_US.UTF-8
 export UPDATE_ZSH_DAYS=7
 
 ZSH_THEME="agnoster"
+# ZSH_THEME="robbyrussell"
 CASE_SENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 
