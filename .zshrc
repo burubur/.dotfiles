@@ -17,3 +17,4 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 source $HOME/.dotfiles/.env
 source $HOME/.dotfiles/.alias
+eval "$(rbenv init -)"
