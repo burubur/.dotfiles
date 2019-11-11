@@ -42,6 +42,7 @@ alias runrabbit="docker run -d --hostname rabbit --name rabbit rabbitmq"
 alias runclspg="docker run -d --name postgres --rm -p 127.0.0.1:5432:5432 cls-postgres"
 alias runredis="redis-server /usr/local/etc/redis.conf --daemonize yes"
 alias killredis="redis-cli shutdown"
+alias runkafka="docker-compose up -d -f ~/lab/kafka/containerized-kafka/docker-compose.yaml"
 
 alias findport="sudo lsof -iTCP -sTCP:LISTEN -n -P | grep"
 alias portusages="sudo lsof -iTCP -sTCP:LISTEN -n -P"
