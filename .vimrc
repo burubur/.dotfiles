@@ -16,7 +16,7 @@ let NERDTreeShowHidden=1
 let mapleader = ","
 nmap <leader>ne :NERDTree<cr>
 
-call plug#begin()
+call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'   }
 Plug 'junegunn/vim-github-dashboard', { 'on': ['GHDashboard', 'GHActivity']   }
@@ -28,6 +28,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 " Plug 'w0rp/ale'
 " Plug 'myitcv/govim'
 " Plug 'rakr/vim-one'
