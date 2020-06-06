@@ -101,6 +101,7 @@ alias eh="sudo vim /etc/hosts"
 alias ch="cat /etc/hosts"
 alias copypath="pwd|pbcopy"
 alias checkredis="usedport 6379"
+alias wh="which"
 
 # unaliasing default
 # unalias g
