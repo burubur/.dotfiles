@@ -4,6 +4,7 @@ echo "installing..."
 ln -svf ~/.dotfiles/.bash_profile ~
 ln -svf ~/.dotfiles/.zshrc ~
 ln -svf ~/.dotfiles/.tmux.conf ~
+ln -svf ~/.dotfiles/init.vim ~/.config/nvim/init.vim
 
 source ~/.dotfiles/.env
 source ~/.dotfiles/.inputrc
@@ -22,9 +23,15 @@ echo "installing software..."
 #        echo "nvim is installed"; \
 #fi;
 
-
-echo "installing neovim python module"
-pip3 install --user neovim
+#which_pip=$(which pip3 | wc -l)
+#echo "installing neovim python module"
+#if [ ${which_pip} -ne 1 ]; then \
+#  echo "installing pip3"; \
+#  pip3 install --user neovim; \
+#else \
+#  echo "upgrading pip3"; \
+#  pip install --upgrade pip; \
+#fi;
 
 echo "software installation done."
 
