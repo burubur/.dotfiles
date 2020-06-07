@@ -13,6 +13,8 @@ tmux source ~/.tmux.conf
 
 echo "installing software..."
 
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 #is_exist=$(which nvim | wc -l)
 #if [ ${is_exist} -ne 1 ]; then \
 #        echo "nvim is not installed"; \
