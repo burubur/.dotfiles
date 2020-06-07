@@ -2,12 +2,18 @@
 alias grm="rm -rf .git"
 
 # application
+alias edalias="nvim ~/.dotfiles/.alias"
 alias loadalias="source $HOME/.dotfiles/.alias"
+alias vim.="vim ."
+alias vime="vim ~/.vimrc"
+alias vimi="vim +PlugInstall"
+alias code="/usr/bin/vim ."
 alias h="htop"
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias server="python3 -m http.server 3000"
 alias servero="python3 -m http.server 3000 && open http://localhost:3000"
 alias lr="lein repl"
+alias i="/usr/local/bin/code-insiders"
 alias rping="redis-cli ping"
 alias tf="~/.bin/terraform"
 alias k="kubectl"
@@ -73,6 +79,7 @@ alias portusages="sudo lsof -iTCP -sTCP:LISTEN -n -P"
 alias usedport="lsof -n -P -i | grep"
 
 # tmux
+alias tx="tmux kill-window -t 0"
 alias t="tmux a -t base"
 alias tl="tmux ls"
 alias ts="tmux source ~/.tmux.conf"
