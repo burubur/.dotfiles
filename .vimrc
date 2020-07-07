@@ -117,13 +117,13 @@ set autoread                      " reload file if the file changes on the disk
 set autowrite                     " write when switching buffers
 set autowriteall                  " write on :quit
 set clipboard=unnamedplus
-set colorcolumn=81                " highlight the 80th column as an indicator
+"set colorcolumn=81                " highlight the 80th column as an indicator
 set completeopt-=preview          " remove the horrendous preview window
 set cursorline                    " highlight the current line for the cursor
 set encoding=utf-8
 set expandtab                     " expands tabs to spaces
 set list                          " show trailing whitespace
-set listchars=tab:\|\ ,trail:▫
+set listchars=tab:\ \ ,trail:▫
 set nospell                       " disable spelling
 set noswapfile                    " disable swapfile usage
 set nowrap
@@ -153,6 +153,10 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " center the screen quickly
 nnoremap <space> zz
+
+" goyo && limelight
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 " Searching
 "----------------------------------------------
@@ -213,7 +217,7 @@ nnoremap <leader>q :close<cr>
 " PLUGIN: bling/vim-airline
 "----------------------------------------------
 " show status bar by default.
-set laststatus=0
+set laststatus=1
 "let g:lightline = {
 "      \ 'colorscheme': 'wombat',
 "      \ }
@@ -477,4 +481,5 @@ nmap <c-s> :w<cr>
 
 " Default: 0.5
 let g:limelight_default_coefficient = 0.7
-nmap <Leader>z :Goyo <cr> :Limelight <cr>
+nmap <Leader>z :Goyo <cr>
+nmap <leader>' :Limelight!! <cr>
