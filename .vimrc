@@ -1,5 +1,4 @@
 " ~/.vimrc
-"----------------------------------------------
 if !has('gui_running')
   set t_Co=256
 endif
@@ -8,10 +7,9 @@ call plug#begin()
 
 " EDITOR
 "----------------------------------------------
-Plug 'arzg/vim-colors-xcode'                        "theme
+Plug 'arzg/vim-colors-xcode'                        "vim theme - xcode 10
 Plug 'nickaroot/vim-xcode-dark-theme'               "vim-xcode theme
-Plug 'Shougo/neocomplcache'                         "depenency for Shougo/neosnippet
-"Plug 'godlygeek/tabular'                           "tab beautifier
+Plug 'Shougo/neocomplcache'                         "dependency for Shougo/neosnippet
 Plug 'scrooloose/nerdtree'                          "sidebar
 Plug 'Xuyuanp/nerdtree-git-plugin'                  "git changes badges on sidebar
 Plug 'ryanoasis/vim-devicons'                       "file icon on sidebar
@@ -19,31 +17,31 @@ Plug 'bling/vim-airline'                            "status bar
 Plug 'christoomey/vim-tmux-navigator'               "vim-tmux extention
 Plug 'ctrlpvim/ctrlp.vim'                           "Ctrl+P
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }   "file search
-Plug 'junegunn/fzf.vim'
-Plug 'plasticboy/vim-markdown'                                      "markdown syntax highlighting
+Plug 'junegunn/fzf.vim'                             "file finder
 Plug 'junegunn/vim-emoji'                           "emoji icon
 Plug 'junegunn/goyo.vim'                            "zen layout
 Plug 'junegunn/limelight.vim'                       "zen theme
-"Plug 'itchyny/lightline.vim'
-
+Plug 'itchyny/lightline.vim'                        "zen bar
 
 " SNIPPETS
 "----------------------------------------------
 Plug 'Shougo/neosnippet'                            "snippet support
 Plug 'Shougo/neosnippet-snippets'                   "default snippets for many languages
 
-" INTELLISENSE
+" AUTOCOMPLETE
 "----------------------------------------------
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }	"golang stuffs
-Plug 'neoclide/coc.nvim', {'branch': 'release'}     "conquer of completion, automaatic intellisence
+"Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }	"golang stuffs
+Plug 'neoclide/coc.nvim', {'branch': 'release'}     "conquer of completion, autoaatic intellisence
+
+" UNIT TESTING
+"-----------------------------------------------
+Plug 'vim-test/vim-test'
 
 call plug#end()
 
-"colorscheme xcode_dark                               "xcode theme
 colorscheme xcodedark
 
 let mapleader = ";"                                 "shortcut prefix
-
 
 " PLUGIN: scrooloose/nerdtree
 "----------------------------------------------
@@ -52,9 +50,14 @@ nmap <C-n> :NERDTreeToggle<CR>
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
 
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let NERDTreeQuitOnOpen = 1
+let NERDTreeShowHidden = 1
 let g:NERDTreeGitStatusWithFlags = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:NERDTreeGitStatusNodeColorization = 1
+let g:NERDTreeChDirMode = 1
 let g:NERDTreeColorMapCustom = {
     \ "Staged"    : "#0ee375",
     \ "Modified"  : "#d9bf91",
@@ -66,8 +69,6 @@ let g:NERDTreeColorMapCustom = {
     \ "Ignored"   : "#808080"
     \ }
 
-
-" files to ignore
 let g:NERDTreeIgnore = [
     \ '\~$',
     \ '\.pyc$',
@@ -80,19 +81,6 @@ let g:NERDTreeIgnore = [
     \ '.vscode',
     \ '.idea'
 \]
-
-" close vim if NERDTree is the only opened window.
-"autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-
-let NERDTreeQuitOnOpen = 1
-
-" Show hidden files by default.
-let NERDTreeShowHidden = 1
-
-" Allow NERDTree to change session root.
-"let g:NERDTreeChDirMode = 1
 
 let g:goyo_width = 80
 
@@ -120,13 +108,6 @@ nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
 " PLUGIN: ctrlpvim/ctrlp.vim
 " Note: no much in this configuration. But vim-go depend on this to run GoDecls(Dir).
 let g:ctrlp_map = ''
-
-" PLUGIN: plasticboy/vim-markdown
-" disable folding
-let g:vim_markdown_folding_disabled = 1
-
-" auto shrink the TOC, so that it won't take up 50% of the screen
-let g:vim_markdown_toc_autofit = 1
 
 " GENERAL SETTING
 "----------------------------------------------
@@ -339,80 +320,6 @@ let g:go_metalinter_enabled = [
 " set whether the JSON tags should be snakecase or camelcase.
 let g:go_addtags_transform = "snakecase"
 
-"----------------------------------------------
-" JSON
-"----------------------------------------------
-au FileType json set expandtab
-au FileType json set shiftwidth=2
-au FileType json set softtabstop=2
-au FileType json set tabstop=2
-
-"----------------------------------------------
-" Make
-"----------------------------------------------
-au FileType make set noexpandtab
-au FileType make set shiftwidth=2
-au FileType make set softtabstop=2
-au FileType make set tabstop=2
-
-"----------------------------------------------
-" Markdown
-"----------------------------------------------
-au FileType markdown setlocal spell
-au FileType markdown set expandtab
-au FileType markdown set shiftwidth=4
-au FileType markdown set softtabstop=4
-au FileType markdown set tabstop=4
-au FileType markdown set syntax=markdown
-
-"----------------------------------------------
-" Protobuf
-"----------------------------------------------
-au FileType proto set expandtab
-au FileType proto set shiftwidth=2
-au FileType proto set softtabstop=2
-au FileType proto set tabstop=2
-
-"----------------------------------------------
-" Python
-"----------------------------------------------
-au FileType python set expandtab
-au FileType python set shiftwidth=4
-au FileType python set softtabstop=4
-au FileType python set tabstop=4
-
-"----------------------------------------------
-" Ruby
-"----------------------------------------------
-au FileType ruby set expandtab
-au FileType ruby set shiftwidth=2
-au FileType ruby set softtabstop=2
-au FileType ruby set tabstop=2
-
-"----------------------------------------------
-" SQL
-"----------------------------------------------
-au FileType sql set expandtab
-au FileType sql set shiftwidth=2
-au FileType sql set softtabstop=2
-au FileType sql set tabstop=2
-
-"----------------------------------------------
-" TypeScript
-"----------------------------------------------
-au FileType typescript set expandtab
-au FileType typescript set shiftwidth=4
-au FileType typescript set softtabstop=4
-au FileType typescript set tabstop=4
-
-"----------------------------------------------
-" YAML
-"----------------------------------------------
-au FileType yaml set expandtab
-au FileType yaml set shiftwidth=2
-au FileType yaml set softtabstop=2
-au FileType yaml set tabstop=2
-
 set completefunc=emoji#complete
 
 " COC - Configuration
@@ -541,7 +448,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+set statusline=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings using CoCList:
 " Show all diagnostics.
