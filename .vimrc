@@ -8,14 +8,13 @@ call plug#begin()
 " EDITOR
 "----------------------------------------------
 Plug 'arzg/vim-colors-xcode'                        "vim theme - xcode 10
-Plug 'nickaroot/vim-xcode-dark-theme'               "vim-xcode theme
 Plug 'Shougo/neocomplcache'                         "dependency for Shougo/neosnippet
 Plug 'scrooloose/nerdtree'                          "sidebar
 Plug 'Xuyuanp/nerdtree-git-plugin'                  "git changes badges on sidebar
 Plug 'ryanoasis/vim-devicons'                       "file icon on sidebar
 Plug 'bling/vim-airline'                            "status bar
 Plug 'christoomey/vim-tmux-navigator'               "vim-tmux extention
-Plug 'ctrlpvim/ctrlp.vim'                           "Ctrl+P
+Plug 'ctrlpvim/ctrlp.vim'                           "ctrl+P
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }   "file search
 Plug 'junegunn/fzf.vim'                             "file finder
 Plug 'junegunn/vim-emoji'                           "emoji icon
