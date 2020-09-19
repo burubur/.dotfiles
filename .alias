@@ -32,6 +32,7 @@ alias tfj="tf output -json"
 alias runsonar="docker run -d --name sonarqube -p 9000:9000 sonarqube:latest"
 
 # directory
+alias .bin="cd $HOME/.bin"
 alias gob="go build"
 alias gt="go test ./..."
 alias dl="cd $HOME/Downloads"
