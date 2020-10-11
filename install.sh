@@ -1,7 +1,7 @@
 echo "installing software..."
 
 # Go
-g install latest
+$GOPATH/bin/g install latest
 
 # Node & NPM
 n lts
