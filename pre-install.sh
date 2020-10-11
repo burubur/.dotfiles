@@ -14,8 +14,11 @@ tmux source ~/.tmux.conf
 echo "installing software..."
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+sudo mkdir /usr/local/go/
+sudo mkdir /usr/local/go/.versions
+sudo chmod -R 777 /usr/local/go/.versions
+curl -sSL https://git.io/g-install | sh -s
 curl -L https://git.io/n-install | bash
-curl -o- -L https://yarnpkg.com/install.sh | bash
 
 #is_exist=$(which nvim | wc -l)
 #if [ ${is_exist} -ne 1 ]; then \
