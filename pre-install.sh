@@ -9,17 +9,18 @@ ln -svf ~/.dotfiles/init.vim ~/.config/nvim/init.vim
 source ~/.dotfiles/.env
 source ~/.dotfiles/.inputrc
 source ~/.dotfiles/.alias
-tmux source ~/.tmux.conf
+# tmux source ~/.tmux.conf
 
 echo "installing software..."
 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-sudo mkdir /usr/local/go/
-sudo mkdir /usr/local/go/.versions
+test -e $HOME/.vim/autoload/plug.vim && echo "installed vim plug" || curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+test -e /usr/local/go && echo "created directory for Go" || sudo mkdir /usr/local/go/
+test -e /usr/local/go/.versions && echo "created directory for Go Versions" || sudo mkdir /usr/local/go/.versions
 sudo chmod -R 777 /usr/local/go
 sudo chmod -R 777 /usr/local/go/.versions
-curl -sSL https://git.io/g-install | sh -s
-curl -L https://git.io/n-install | bash
+unalias g >/dev/null 2>/dev/null
+test $HOME/lab/go/bin/g && echo "installed go version manager" ||  curl -sSL https://git.io/g-install | sh -s
+test $HOME/n/bin/n && echo "installed n" || curl -L https://git.io/n-install | bash
 
 #is_exist=$(which nvim | wc -l)
 #if [ ${is_exist} -ne 1 ]; then \
@@ -42,6 +43,3 @@ curl -L https://git.io/n-install | bash
 #fi;
 
 echo "software installation done."
-
-echo ""
-echo "installed."
