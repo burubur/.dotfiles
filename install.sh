@@ -1,11 +1,12 @@
-echo "installing software..."
+echo "installing software...\n"
 
 # Go
 $GOPATH/bin/g install latest
 
 # Node & NPM
-n lts
-n latest
+test -e /Users/burhan.mubarok/n/bin/node && echo "installed node" || $(n latest && n lts)
 
 # Yarn
-curl -o- -L https://yarnpkg.com/install.sh | bash
+test -e $HOME/.yarn/bin/yarn && echo "installed yarn" || curl -o- -L https://yarnpkg.com/install.sh | bash
+
+echo "\ninstallation done."

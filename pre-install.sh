@@ -1,5 +1,4 @@
-echo ""
-echo "installing..."
+echo "installing software dependency...\n"
 
 ln -svf ~/.dotfiles/.bash_profile ~
 ln -svf ~/.dotfiles/.zshrc ~
@@ -16,8 +15,8 @@ echo "installing software..."
 test -e $HOME/.vim/autoload/plug.vim && echo "installed vim plug" || curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 test -e /usr/local/go && echo "created directory for Go" || sudo mkdir /usr/local/go/
 test -e /usr/local/go/.versions && echo "created directory for Go Versions" || sudo mkdir /usr/local/go/.versions
-sudo chmod -R 777 /usr/local/go
-sudo chmod -R 777 /usr/local/go/.versions
+test `stat -f '%OLp' /usr/local/go` = 777 && echo "granted go directory permission" || sudo chmod -R 777 /usr/local/go
+test `stat -f '%OLp' /usr/local/go/.versions` = 777 && echo "granted go-version directory permission " sudo chmod -R 777 /usr/local/go/.versions
 unalias g >/dev/null 2>/dev/null
 test $HOME/lab/go/bin/g && echo "installed go version manager" ||  curl -sSL https://git.io/g-install | sh -s
 test $HOME/n/bin/n && echo "installed n" || curl -L https://git.io/n-install | bash
@@ -42,4 +41,4 @@ test $HOME/n/bin/n && echo "installed n" || curl -L https://git.io/n-install | b
 #  pip install --upgrade pip; \
 #fi;
 
-echo "software installation done."
+echo "\ninstallation done."
