@@ -3,6 +3,7 @@ alias grm="rm -rf .git"
 
 # application
 unalias g >/dev/null 2>/dev/null
+alias remote='remote() { ssh burhan.mubarok@"$1"; }; remote'
 alias g=$GOPATH/bin/g
 alias gov=$GOPATH/bin/g
 alias edalias="nvim ~/.dotfiles/.alias"
