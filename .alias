@@ -34,6 +34,7 @@ alias tfr="terraform refresh"
 alias tfo="tf output"
 alias tfj="tf output -json"
 alias runsonar="docker run -d --name sonarqube -p 9000:9000 sonarqube:latest"
+alias sonarscan="~/.bin/sonarscanner/bin/sonar-scanner"
 
 # directory
 alias .bin="cd $HOME/.bin"
