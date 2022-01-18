@@ -29,3 +29,11 @@ if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export GOPATH="$HOME/lab/go"; export GOROOT="/usr/local/go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export PATH=/Users/burhan.mubarok/.tiup/bin:$PATH
