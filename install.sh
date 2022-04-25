@@ -1,24 +1,40 @@
 # FOR SAFETY PURPOSE, PLEASE RUN THIS INSTALLATION 1 BY 1 BY REMARK AND UNREMARK THEM LINE BY LINE :)
-echo "installing software...\n"
+echo "installing softwares...\n"
 
 if [[ $OSTYPE != 'darwin'* ]]; then
   echo "unsupported OS"
   exit 0
 fi
 
+# INITIATE LAB ENV.
+cd $USERS
+test -d && echo "installed lab" || mkdir lab
+test ! -d github && mkdir github
+
 # BREW
-# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-# echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$USER/.zprofile
-# eval "$(/opt/homebrew/bin/brew shellenv)"
+test -f /opt/homebrew/bin/brew && echo "installed brew" || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$USER/.zprofile && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # ITERM
 # brew install iterm2
 
 # ZSH
-# brew install zsh
+test -f /bin/zsh && echo "installed zsh" || brew install zsh
+
+# OH-MY-ZSH
+test -d ~/.oh-my-zsh && echo "installed oh-my-zsh" || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # GIT
-# brew install git
+test -f /usr/bin/git && echo "installed git" || brew install git
+
+# ASDF
+# cd $USERS/lab/github
+# git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.9.0
+
+# MIMIER
+test -f /opt/homebrew/Cellar/oath-toolkit/2.6.6/bin/oathtool && echo "installed authenticator" || brew install oath-toolkit
+
+# RBENV
+test -f /opt/homebrew/bin/rbenv && echo "installed rbenv" || brew install rbenv
 
 # G - Golang package manager
 # curl -sSL https://git.io/g-install | sh -s
