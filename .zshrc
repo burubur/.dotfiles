@@ -21,11 +21,11 @@ source $HOME/.dotfiles/.alias
 eval "$(rbenv init -)"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/burhan.mubarok/.bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/burhan.mubarok/.bin/google-cloud-sdk/path.zsh.inc'; fi
+#if [ -f '/Users/burhan.mubarok/.bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/burhan.mubarok/.bin/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/burhan.mubarok/.bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/burhan.mubarok/.bin/google-cloud-sdk/completion.zsh.inc'; fi
-if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
+#if [ -f '/Users/burhan.mubarok/.bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/burhan.mubarok/.bin/google-cloud-sdk/completion.zsh.inc'; fi
+#if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
