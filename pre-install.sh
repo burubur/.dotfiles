@@ -1,5 +1,6 @@
 echo "installing software dependency...\n"
 
+ln -svf ~/.dotfiles/.bashrc ~
 ln -svf ~/.dotfiles/.bash_profile ~
 ln -svf ~/.dotfiles/.zshrc ~
 ln -svf ~/.dotfiles/.tmux.conf ~

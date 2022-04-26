@@ -15,9 +15,11 @@ plugins=(
   zsh-autosuggestions
 )
 
-source $ZSH/oh-my-zsh.sh
-source $HOME/.dotfiles/.env
-source $HOME/.dotfiles/.alias
+. $ZSH/oh-my-zsh.sh
+. $HOME/.dotfiles/.env
+. $HOME/.dotfiles/.alias
+. $HOME/.asdf/asdf.sh
+test -f ~/.fzf.bash && source ~/.fzf.bash
 eval "$(rbenv init -)"
 
 # The next line updates PATH for the Google Cloud SDK.
