@@ -39,7 +39,7 @@ test -d ~/.asdf && echo "installed asdf" || (git clone https://github.com/asdf-v
 test -f /opt/homebrew/Cellar/oath-toolkit/2.6.6/bin/oathtool && echo "installed authenticator" || brew install oath-toolkit
 
 # MIMIER
-test -f /lab/github/mimier && echo "installed mimier" || git clone git@github.com:burubur/mimier.git /lab/github/mimier
+test -d ~/lab/github/mimier && echo "installed mimier" || git clone git@github.com:burubur/mimier.git /lab/github/mimier
 
 # RBENV
 test -f /opt/homebrew/bin/rbenv && echo "installed rbenv" || brew install rbenv
