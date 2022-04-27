@@ -50,19 +50,6 @@ test -d ~/lab/github/mimier && echo "installed mimier" || git clone git@github.c
 # RBENV
 test -f /opt/homebrew/bin/rbenv && echo "installed rbenv" || brew install rbenv
 
-# G - Golang package manager
-# curl -sSL https://git.io/g-install | sh -s
-
-# GO
-# g install 1.17
-# g install latest
-
-# N - NodeJS package manager
-# test -e /Users/$USER/n && echo "installed n package manager for NodeJS" || brew install n
-
-# Node & NPM
-# test -e /Users/$USER/n/bin/node && echo "installed node" || N_PREFIX=/Users/$USER n latest && n lts
-
 # Yarn
 # test -e /opt/homebrew/bin/yarn && echo "installed yarn" || brew install yarn
 # curl -o- -L https://yarnpkg.com/install.sh | bash
