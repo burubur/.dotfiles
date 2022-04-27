@@ -35,6 +35,12 @@ test -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions && echo "installed autoc
 # ASDF
 test -d ~/.asdf && echo "installed asdf" || (git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.9.0 && . $HOME/.asdf/asdf.sh)
 
+# ASDF - GOLANG
+test -d ~/.asdf/plugins/golang && echo "installed golang" || (asdf plugin add golang && asdf install golang latest && asdf global golang latest)
+
+# ASDF - NODEJS
+test -d ~/.asdf/plugins/nodejs && echo "installed nodejs" || (asdf plugin add nodejs && asdf install nodejs latest && asdf global nodejs latest)
+
 # OAUTH
 test -f /opt/homebrew/Cellar/oath-toolkit/2.6.6/bin/oathtool && echo "installed authenticator" || brew install oath-toolkit
 
