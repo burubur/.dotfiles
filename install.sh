@@ -33,7 +33,7 @@ test -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting && echo "installed s
 test -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions && echo "installed autocompletion plugin" || git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 # ASDF
-test -d ~/.asdf && echo "installed asdf" || (git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.9.0)
+test -d ~/.asdf && echo "installed asdf" || (git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.9.0 && . $HOME/.asdf/asdf.sh)
 
 # OAUTH
 test -f /opt/homebrew/Cellar/oath-toolkit/2.6.6/bin/oathtool && echo "installed authenticator" || brew install oath-toolkit
