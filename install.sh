@@ -18,6 +18,9 @@ test ~/.bin/nvim-osx64/bin && echo "installed nvim" || (cd ~/.bin && curl -LO ht
 # GIT
 test -f /usr/bin/git && echo "installed git" || brew install git
 
+# Set Github
+git config --global url.https://github.com/.insteadOf git://github.com/
+
 # BREW
 test -f /opt/homebrew/bin/brew && echo "installed brew" || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$USER/.zprofile && eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -48,11 +51,19 @@ test -f /opt/homebrew/Cellar/oath-toolkit/2.6.6/bin/oathtool && echo "installed 
 test -d ~/lab/github/mimier && echo "installed mimier" || git clone git@github.com:burubur/mimier.git /lab/github/mimier
 
 # RBENV
-test -f /opt/homebrew/bin/rbenv && echo "installed rbenv" || brew install rbenv
+#test -f /opt/homebrew/bin/rbenv && echo "installed rbenv" || brew install rbenv
 
 # Yarn
 # test -e /opt/homebrew/bin/yarn && echo "installed yarn" || brew install yarn
 # curl -o- -L https://yarnpkg.com/install.sh | bash
+
+# DOCKER
+test -f /opt/homebrew/bin/docker && echo "installed docker" || brew install docker
+test -f /opt/homebrew/bin/docker-compose && echo "installed docker-compose" || brew install docker-compose
+
+# COLIMA - CONTAINER
+# test -d ~/lab/github/colima && echo "installed container manager" || (git clone https://github.com/abiosoft/colima ~/lab/github/colima && make -C ~/lab/github/colima && sudo make install -C ~/lab/github/colima)
+test -f /opt/homebrew/bin/colima && echo "installed colima" || brew install colima
 
 test -f ~/.bin/kubectl && echo "installed kubectl" || (curl -o ~/.bin/kubectl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/arm64/kubectl" && chmod +x ~/.bin/kubectl) 
 
