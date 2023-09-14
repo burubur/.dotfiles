@@ -45,16 +45,16 @@ test -d ~/.asdf/plugins/golang && echo "installed golang" || (asdf plugin add go
 test -d ~/.asdf/plugins/nodejs && echo "installed nodejs" || (asdf plugin add nodejs && asdf install nodejs latest && asdf global nodejs latest)
 
 # OAUTH
-test -f /opt/homebrew/Cellar/oath-toolkit/2.6.6/bin/oathtool && echo "installed authenticator" || brew install oath-toolkit
+# test -f /opt/homebrew/Cellar/oath-toolkit/2.6.6/bin/oathtool && echo "installed authenticator" || brew install oath-toolkit
 
 # MIMIER
-test -d ~/lab/github/mimier && echo "installed mimier" || git clone git@github.com:burubur/mimier.git /lab/github/mimier
+# test -d ~/lab/github/mimier && echo "installed mimier" || git clone git@github.com:burubur/mimier.git /lab/github/mimier
 
 # RBENV
 #test -f /opt/homebrew/bin/rbenv && echo "installed rbenv" || brew install rbenv
 
 # Yarn
-# test -e /opt/homebrew/bin/yarn && echo "installed yarn" || brew install yarn
+test -e /opt/homebrew/bin/yarn && echo "installed yarn" || brew install yarn
 # curl -o- -L https://yarnpkg.com/install.sh | bash
 
 # DOCKER
@@ -63,7 +63,7 @@ test -f /opt/homebrew/bin/docker-compose && echo "installed docker-compose" || b
 
 # COLIMA - CONTAINER
 # test -d ~/lab/github/colima && echo "installed container manager" || (git clone https://github.com/abiosoft/colima ~/lab/github/colima && make -C ~/lab/github/colima && sudo make install -C ~/lab/github/colima)
-test -f /opt/homebrew/bin/colima && echo "installed colima" || brew install colima
+test -f /usr/local/bin/orb && echo "installed orbstack" || brew install orbstack
 
 test -f ~/.bin/kubectl && echo "installed kubectl" || (curl -o ~/.bin/kubectl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/arm64/kubectl" && chmod +x ~/.bin/kubectl) 
 
