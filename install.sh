@@ -67,4 +67,6 @@ test -f /usr/local/bin/orb && echo "installed orbstack" || brew install orbstack
 
 test -f ~/.bin/kubectl && echo "installed kubectl" || (curl -o ~/.bin/kubectl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/arm64/kubectl" && chmod +x ~/.bin/kubectl) 
 
+test -f /opt/homebrew/bin/terraform && echo "installed terraform" || (brew tap hashicorp/tap && brew install hashicorp/tap/terraform && brew update && brew upgrade hashicorp/tap/terraform)
+
 echo "\ninstallation done."
