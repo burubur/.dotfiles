@@ -12,21 +12,21 @@ source ~/.dotfiles/.alias
 
 echo "installing software..."
 
-test -e $HOME/.vim/autoload/plug.vim && echo "installed vim plug" || curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-test -e /usr/local/go && echo "created directory for Go" || sudo mkdir /usr/local/go/
-test -e /usr/local/go/.versions && echo "created directory for Go Versions" || sudo mkdir /usr/local/go/.versions
-test `stat -f '%OLp' /usr/local/go` = 777 && echo "granted go directory permission" || sudo chmod -R 777 /usr/local/go
-test `stat -f '%OLp' /usr/local/go/.versions` = 777 && echo "granted go-version directory permission " sudo chmod -R 777 /usr/local/go/.versions
+# test -e $HOME/.vim/autoload/plug.vim && echo "installed vim plug" || curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# test -e /usr/local/go && echo "created directory for Go" || sudo mkdir /usr/local/go/
+# test -e /usr/local/go/.versions && echo "created directory for Go Versions" || sudo mkdir /usr/local/go/.versions
+# test `stat -f '%OLp' /usr/local/go` = 777 && echo "granted go directory permission" || sudo chmod -R 777 /usr/local/go
+# test `stat -f '%OLp' /usr/local/go/.versions` = 777 && echo "granted go-version directory permission " sudo chmod -R 777 /usr/local/go/.versions
 unalias g >/dev/null 2>/dev/null
-test $HOME/lab/go/bin/g && echo "installed go version manager" ||  curl -sSL https://git.io/g-install | sh -s
-test $HOME/n/bin/n && echo "installed n" || curl -L https://git.io/n-install | bash
+# test $HOME/lab/go/bin/g && echo "installed go version manager" ||  curl -sSL https://git.io/g-install | sh -s
+# test $HOME/n/bin/n && echo "installed n" || curl -L https://git.io/n-install | bash
 
 #is_exist=$(which nvim | wc -l)
 #if [ ${is_exist} -ne 1 ]; then \
-#        echo "nvim is not installed"; \
-#	echo "installing neovim..." \
-#	curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz; \
-#	tar xzf nvim-macos.tar.gz; \
+#        echo "nvim is not installed"; 
+#echo "installing neovim..."
+#curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz;
+#tar xzf nvim-macos.tar.gz
 #else \
 #        echo "nvim is installed"; \
 #fi;

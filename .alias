@@ -3,6 +3,7 @@ alias grm="rm -rf .git"
 
 # application
 unalias g >/dev/null 2>/dev/null
+alias rp='kernel ssh --google-project=p-gjk-a000074-b85a '
 alias remote='remote() { ssh burhan.mubarok@"$1"; }; remote'
 alias g=$GOPATH/bin/g
 alias gov=$GOPATH/bin/g
@@ -92,6 +93,14 @@ alias runkafka="docker-compose up -d -f ~/lab/kafka/containerized-kafka/docker-c
 alias findport="sudo lsof -iTCP -sTCP:LISTEN -n -P | grep"
 alias portusages="sudo lsof -iTCP -sTCP:LISTEN -n -P"
 alias usedport="lsof -n -P -i | grep"
+
+#alias kint="gcloud container clusters get-credentials gjk-transport-int --region asia-east1 --project gjk-transport-int-21bb"
+alias kint="gcloud container clusters get-credentials gjk-transport-int --region asia-east1 --project gjk-transport-int-21bb --internal-ip"
+#alias kprod="gcloud container clusters get-credentials gjk-transport-prd --region asia-east1 --project gjk-transport-prd-032d"
+alias kprod="gcloud container clusters get-credentials gjk-transport-prd --region asia-east1 --project gjk-transport-prd-032d --internal-ip"
+alias kpickup="k config set-context --current --namespace=pickup-experience"
+alias ktracking="k config set-context --current --namespace=tracking-exp"
+alias kbooking="k config set-context --current --namespace=booking-exp"
 
 # tmux
 alias tx="tmux kill-window -t 0"
