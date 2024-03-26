@@ -34,3 +34,8 @@ set convert-meta off
 # Filtered history search
 # "\e[A": history-search-backward
 # "\e[B": history-search-forward"]]]"
+
+set -gx optflags "-Wno-error=implicit-function-declaration"
+set -gx LDFLAGS "-L/opt/homebrew/opt/libffi/lib"
+set -gx CPPFLAGS "-I/opt/homebrew/opt/libffi/include"
+set -gx PKG_CONFIG_PATH "/opt/homebrew/opt/libffi/lib/pkgconfig"
